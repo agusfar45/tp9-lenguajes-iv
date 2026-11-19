@@ -25,18 +25,20 @@ La terminal de Vite muestra la URL local. Para generar el sitio de producción e
 | Proyecto React | Vite, React y React Router |
 | Cuatro componentes en src | `Inicio.jsx`, `Header.jsx`, `AcercaDeNosotros.jsx` y `Reservas.jsx` |
 | Cuatro habitaciones | Patio, Vista al cerro, Familiar y Suite del valle |
-| Rango de fechas | Dos selectores de calendario. El ingreso admite desde hoy según Salta. La salida comienza al día siguiente del ingreso. |
-| Confirmación | `window.alert` con habitación, fechas y total. El mismo mensaje queda visible en la página. |
+| Rango de fechas | Calendario propio de dos meses hecho en React: primer clic marca el ingreso y el segundo la salida, con el rango resaltado. No permite días pasados (según la hora de Salta). |
+| Confirmación | `window.alert` con habitación, fechas y total. El mismo mensaje queda visible en el resumen tipo ticket. |
+| Imágenes | Ilustraciones SVG propias del hotel y de cada habitación en `src/assets`. |
+| Estilos | CSS propio (`src/style.css`), sin librerías: marcos en forma de arco colonial, franja inspirada en el aguayo y diseño adaptable a celular. |
 | Despliegue | GitHub Pages, publicado automáticamente con GitHub Actions (`.github/workflows/deploy.yml`) en cada push a `main`. |
 
 El TP5 aporta la organización de un proyecto React. Del TP6 se retoma la separación del encabezado como componente. El TP7 aporta la navegación por rutas desde el encabezado. El TP9 aplica esas ideas al dominio de reservas.
 
 ## Prueba de la reserva
 
-1. Entrá en «Reservas» y confirmá que aparecen cuatro opciones.
-2. Elegí «Patio», indicá un ingreso desde hoy y una salida dos días después. El total esperado es ARS 136.000.
+1. Entrá en «Reservas» y confirmá que aparecen cuatro habitaciones.
+2. Elegí «Patio» y en el calendario tocá un día de ingreso y otro dos días después. El total esperado es ARS 136.000.
 3. Confirmá. Debe aparecer un aviso del navegador con la habitación, las dos fechas y el total.
-4. Probá una salida anterior o igual al ingreso. El formulario debe impedir la confirmación.
+4. Tocá un día anterior al ingreso: pasa a ser el nuevo ingreso. Sin salida elegida, el formulario no confirma.
 
 La reserva es académica. El sitio no envía datos, no cobra y no registra disponibilidad real.
 
